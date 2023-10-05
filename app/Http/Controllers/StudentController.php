@@ -9,7 +9,7 @@ class StudentController extends Controller
 {
     public function getAll()
     {
-        $students = Student::all();
+        $students = Student::with(['courses', 'stages', 'options', 'additonal'])->all();
         return $students;
     }
 
